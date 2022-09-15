@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container fl">
+      <div class="white-bg">
+        <div class="inner-container">
+          <header>
+            <div class="top-line fl sp-btw">
+              <div class="logo"><img src="img/logo.png" alt="logo" /></div>
+              <div class="current-time">
+                <div class="current-weekday">
+                  <span id="week-day">Tuesday</span>,
+                  <span id="hours">16</span>:<span id="minutes">30</span>
+                </div>
+                <div class="current-date">
+                  <span id="date">6</span> of <span id="month">September</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="search-line">
+              <form class="fl" id="search">
+                <input
+                  id="search-input"
+                  type="text"
+                  placeholder="Enter the city"
+                  autofocus="on"
+                /><input
+                  type="submit"
+                  id="search-submit"
+                  value="Search"
+                /><button id="get-location">Get current location</button>
+              </form>
+            </div>
+          </header>
+          <nav>
+            <ul class="fl">
+              <li class="active">Today</li>
+              <li>Tomorrow</li>
+              <li>Choose date</li>
+            </ul>
+          </nav>
+          <div class="current-weather fl center">
+            <span class="the-city">Lviv</span>
+            <span class="t">t</span
+            ><span class="the-temp" id="current-temp">16</span
+            ><sup class="temp-unit active" id="C">°C</sup
+            ><sup class="temp-unit not-active" id="F">°F</sup
+            ><img src="img/sun.gif" alt="weather" />
+          </div>
+          <div class="weather-details">
+            <ul class="fl start">
+              <li class="sky">
+                Sky:
+                <span>sunny</span>
+              </li>
+              <li class="wind">
+                Wing:
+                <span>6 km/h</span>
+              </li>
+              <li class="recipitation">
+                Precipitation:
+                <span>40%</span>
+              </li>
+              <li class="air-humidity">
+                Air-humidity:
+                <span>25%</span>
+              </li>
+            </ul>
+          </div>
+          <div class="weather-forcast">
+            <ul class="fl sp-btw">
+              <li class="forecast-item">
+                <div class="forcast-day">
+                  Wed <img src="img/cloud.gif" alt="" />
+                </div>
+                <div class="forcast-temp">
+                  <div class="day-temp">28°C</div>
+
+                  <div class="hight-temp">15°C</div>
+                </div>
+              </li>
+              <li class="forecast-item">
+                <div class="forcast-day">
+                  Wed <img src="img/cloud.gif" alt="" />
+                </div>
+                <div class="forcast-temp">
+                  <div class="day-temp">28°C</div>
+
+                  <div class="hight-temp">15°C</div>
+                </div>
+              </li>
+              <li class="forecast-item">
+                <div class="forcast-day">
+                  Wed <img src="img/cloud.gif" alt="" />
+                </div>
+                <div class="forcast-temp">
+                  <div class="day-temp">28°C</div>
+
+                  <div class="hight-temp">15°C</div>
+                </div>
+              </li>
+              <li class="forecast-item">
+                <div class="forcast-day">
+                  Wed <img src="img/cloud.gif" alt="" />
+                </div>
+                <div class="forcast-temp">
+                  <div class="day-temp">28°C</div>
+
+                  <div class="hight-temp">15°C</div>
+                </div>
+              </li>
+              <li class="forecast-item">
+                <div class="forcast-day">
+                  Wed <img src="img/cloud.gif" alt="" />
+                </div>
+                <div class="forcast-temp">
+                  <div class="day-temp">28°C</div>
+
+                  <div class="hight-temp">15°C</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="viewed-cities-bl">
+        <div class="recent-viewed">
+          <div class="cities-list">Recently viewed:</div>
+          <ul class="city-name fl">
+            <li>Lviv</li>
+            <li>Kyiv</li>
+            <li>Mariupol</li>
+            <li>Donetsk</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

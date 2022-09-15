@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SheCodes Plus</title>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h1>JavaScript Open Weather API</h1>
+
+    <h3>JS Challenge 1</h3>
+    <p>Import Axios</p>
+
+    <h3>JS Challenge 2</h3>
+    <p>Get your API key and save in a variable called apiKey</p>
+
+    <h3>JS Challenge 3</h3>
+    <p>Get the API response for the weather in Sydney, using metrics unit</p>
+
+    <h3>JS Challenge 4</h3>
+    <p>Log the current temperature in Sydney</p>
+
+    <h3>JS Challenge 5</h3>
+    <p>
+      Replace the h1 of this page with the weather in Sydney: i.e: It is 19
+      degrees in Sydney
+    </p>
+
+    <script>
+      const apiKey = '4d80f4196b972622c7113645a58d336a';
+      const city = 'Sydney';
+      const cityHeader = document.querySelector('h1');
+      let lat = 49.9351552;
+      let long = 24.1795072;
+
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      axios.get(apiUrl).then(showObject);
+      navigator.geolocation.getCurrentPosition(getPositin);
+
+      function showMyWeather(response) {
+        Math.round(console.log(response.data.main.temp));
+        cityHeader.innerHTML = `<p>the weather of your city is ${response.data.main.temp}</p>`;
+      }
+
+      function getPositin(position) {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        console.log(lat, long);
+      }
+
+      const myWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+      axios.get(myWeatherUrl).then(showMyWeather);
+
+      function showObject(response) {
+        console.log(response.data.main.temp);
+        cityHeader.innerHTML = `It is ${Math.round(
+          response.data.main.temp
+        )} degrees in ${city}`;
+      }
+    </script>
+  </body>
+</html>
